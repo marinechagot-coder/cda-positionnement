@@ -18,7 +18,7 @@ echo -n "Python: "
 python --version 2>/dev/null && echo "" || echo "⚠️ Optionnel"
 # MySQL
 echo -n "MySQL: "
-mysqlsh --version 2>/dev/null && echo "" || echo "⚠️ À installer"
+mysql --version 2>/dev/null && echo "" || echo "⚠️ À installer"
 # Docker (optionnel)
 echo -n "Docker: "
 docker --version 2>/dev/null && echo "" || echo "⚠️ Optionnel (avancé)"
