@@ -1,0 +1,143 @@
+ //Écrire une fonction fizzBuzz(n) qui affiche les nombres de 1 à n avec les règles suivantes:
+//Si multiple de 3: afficher "Fizz"
+//Si multiple de 5: afficher "Buzz"
+//Si multiple de 3 ET 5: afficher "FizzBuzz"
+//Sinon: afficher le nombre
+
+function fizzBuzz(n) {
+for i = 1 to n
+ if i|3==0 and i|5==0 then print("FizzBuzz")
+ elseif i|3==0 then print("Fizz")
+ elseif i|5==0 then print("Buzz")
+ else print(i)
+next i
+}
+//Écrire une fonction isPalindrome(str) qui retourne true si la chaîne est un palindrome
+//(identique à l'envers), false sinon.
+//Contraintes:
+//Ignorer les espaces et la casse
+//Exemples de palindromes: "kayak", "Elu par cette crapule", "radar"
+
+function isPalindrome(str) {
+str=supprespace(str)
+str=minuscule(str)
+if len(str)|2==0
+ test=True
+ for i=0 to len(str)/2-1
+  if str[i]!=str[len(str)-i] then test=false
+ next i
+ return test
+Else return False
+
+}
+//Énoncé: Écrire une fonction areAnagrams(str1, str2) qui retourne true si les deux chaînes sont
+//des anagrammes, false sinon.
+function areAnagrams(str1, str2) {
+str1=supprespace(str1)
+str1=minuscule(str1)
+str2=supprespace(str2)
+str2=minuscule(str2)
+if len(str1)!=len(str2) then
+  return false
+else
+  for i=0 to len(str1)-1
+    If not in dico add dico key=str1[i], dico[key]=1
+    else add 1 to dico[key]
+  next i
+  test=True
+  for i=0 to len(str2)-1
+    if str2[i] in dico then 
+      val=dico[key]-1
+      if val=0 then extract key
+      else dico[key]=val
+    else test=False
+  next i
+  return test
+}
+
+//Énoncé: Écrire une fonction fibonacci(n) qui retourne le nième nombre de la suite de Fibonacci.
+//Rappel:
+//fib(0) = 0
+//fib(1) = 1
+//fib(n) = fib(n-1) + fib(n-2)
+
+// Version récursive
+function fibonacci(n) {
+ if n=0 then val=0
+ elseif n=1 then val=1
+else val=fibonacci(n-2)+fibonacci(n-1)
+return val
+}
+// Version itérative (bonus)
+function fibonacciIterative(n) {
+ if n=0 then val=0
+ else
+   valn0=0
+   valn1=1
+   for i=0 to n
+     val=valn0+valn1
+     valn0=valn1
+     valn1=val
+   next i
+return val
+}
+
+//Énoncé: Écrire deux fonctions:
+//1. sortArray(arr): Trie un tableau de nombres par ordre croissant (sans utiliser .sort())
+//2. findMax(arr): Trouve le nombre maximum dans un tableau
+//Exemples:
+//sortArray([3, 1, 4, 1, 5, 9, 2]); // [1, 1, 2, 3, 4, 5, 9]
+//findMax([3, 1, 4, 1, 5, 9, 2]); // 9
+//Solution à implémenter:
+function sortArray(arr) {
+ // Implémenter un tri (bubble sort acceptable)
+test=true
+While test
+  Test=False
+  for i=0 to len(arr)-2    
+    if arr[i]>arr[i+1] then
+      test=True
+      val=arr[i]
+      arr[i]=arr[i+1]
+      arr[i+1]=val
+Wend
+}
+function findMax(arr) {
+  val=0
+  For i=0 to len(arr)-1
+     if arr[i]>val then val=arr[i]
+ return val 
+}
+//Exercice 3.6: Manipulation de données (Avancé)
+//filterByCategory(products, category): Retourne les produits d'une catégorie
+filterByCategory(products, category) {
+j=0
+For i=0 to len(products)-1
+   if products[i].category==category then 
+      redim tabl(j)
+      tabl(j)=products[i]
+      j=j+1
+return tabl
+}
+
+getAveragePrice(products) {
+For i=0 to len(products)-1
+  tot=tot+products[i].price
+val=tot/len(products)
+return val
+}
+ getMostExpensive(products){
+ // En cas de plusieurs produits de meme valeur; renvoie le premier listé 
+  For i=0 to len(products)-1
+    if products[i].price>products[index].price then index=i
+return products[index]
+ 
+ }
+ groupByCategory(products){
+  For i=0 to len(products)-1
+    If key=product[i].category not in dico add dico key=product[i].category
+  For each key in dico
+    tab=filterByCategory(products,key)
+     objgroup add {key: tab}  
+  return objgroup
+ }
