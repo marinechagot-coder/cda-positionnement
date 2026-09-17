@@ -11,16 +11,43 @@ main {
   padding-top: 10px;
   padding-bottom: 10px;
 }
-#listecomp {
+.listecomp {
   /*Items affichés en grille (3 colonnes sur desktop)
 Chaque item dans une carte avec:
 Bordure 1px grise
 Border-radius 8px
 Ombre portée légère*/
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+}
+.comp1 {
+  border: 1px solid grey;
+  border-radius: 8px;
+  box-shadow: 6px 6px 6px blach inset;
+  padding: 15px;
+}
+.comp2 {
+  border: 1px solid grey;
+  border-radius: 8px;
+  box-shadow: 6px 6px 6px blach inset;
+  padding: 15px;
+}
+.comp3 {
+  border: 1px solid grey;
+  border-radius: 8px;
+  box-shadow: 6px 6px 6px blach inset;
   padding: 15px;
 }
 Footer {
   background-color: #ecf0f1;
   text-align: center;
   padding: 20px;
+}
+@media screen and (max-width: 768px) {
+  .listecomp {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
 }
